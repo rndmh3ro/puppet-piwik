@@ -1,12 +1,12 @@
 {
-  "name": "velaluqa-piwik",
-  "version": "1.0.1",
-  "author": "Arthur Leonard Andersen",
+  "name": "klyall-piwik",
+  "version": "1.0.2",
+  "author": "Arthur Leonard Andersen,Zijad Purkovic",
   "summary": "Puppet Piwik Module",
   "license": "GPLv3",
-  "source": "https://github.com/velaluqa/puppet-piwik",
-  "project_page": "https://github.com/velaluqa/puppet-piwik/",
-  "issues_url": "https://github.com/velaluqa/puppet-piwik/issues",
+  "source": "https://github.com/klyall/puppet-piwik",
+  "project_page": "https://github.com/klyall/puppet-piwik/",
+  "issues_url": "https://github.com/klyall/puppet-piwik/issues",
   "description": "Module to install Piwik using puppet.",
   "dependencies": [
 
