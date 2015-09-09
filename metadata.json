@@ -1,7 +1,7 @@
 {
   "name": "klyall-piwik",
-  "version": "1.0.1",
-  "author": "Arthur Leonard Andersen",
+  "version": "2.0.0",
+  "author": "Arthur Leonard Andersen,Keith Lyall",
   "summary": "Puppet Piwik Module",
   "license": "GPLv3",
   "source": "https://github.com/klyall/puppet-piwik",
