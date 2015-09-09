@@ -10,6 +10,6 @@
   "description": "Module to install Piwik using puppet.",
   "dependencies": [
     { "name": "puppetlabs/apache", "version_requirement": ">=1.6.0" },
-    { "name": "example42/php", "version_requirement": ">=2.0.21" },
+    { "name": "example42/php", "version_requirement": ">=2.0.21" }
   ]
 }

@@ -10,6 +10,13 @@ class piwik::install_piwik ($path, $user, $version) {
     }
   }
 
+  if !defined(Package['rsync']) {
+    package { 'rsync':
+      ensure => installed,
+    }
+  }
+
+
   if $version == 'latest' {
     $real_version = 'latest.zip'
   } else {
@@ -33,7 +40,7 @@ class piwik::install_piwik ($path, $user, $version) {
     path    => '/bin:/usr/bin',
     creates => "${path}/index.php",
     cwd     => '/tmp',
-    command => "bash -c 'unzip -o /tmp/${real_version} \'piwik/*\''",
+    command => "bash -c 'unzip -o /tmp/${real_version}'",
     require => [ Exec['piwik-download'], Package['unzip'] ],
     user    => $user,
   }
@@ -42,7 +49,7 @@ class piwik::install_piwik ($path, $user, $version) {
     path    => '/bin:/usr/bin',
     creates => "${path}/index.php",
     command => "bash -c 'rsync -r /tmp/piwik/ ${path}/'",
-    require => Exec['piwik-unzip'],
+    require => [ Exec['piwik-unzip'], Package['rsync'] ],
     user    => $user,
   }
 
