@@ -1,7 +1,7 @@
 {
   "name": "klyall-piwik",
-  "version": "1.0.2",
-  "author": "Arthur Leonard Andersen,Zijad Purkovic",
+  "version": "2.0.0",
+  "author": "Arthur Leonard Andersen,Zijad Purkovic,Keith Lyall",
   "summary": "Puppet Piwik Module",
   "license": "GPLv3",
   "source": "https://github.com/klyall/puppet-piwik",
@@ -9,6 +9,7 @@
   "issues_url": "https://github.com/klyall/puppet-piwik/issues",
   "description": "Module to install Piwik using puppet.",
   "dependencies": [
-
+    { "name": "puppetlabs/apache", "version_requirement": ">=1.6.0" },
+    { "name": "example42/php", "version_requirement": ">=2.0.21" }
   ]
 }

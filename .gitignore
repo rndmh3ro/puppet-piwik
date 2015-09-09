@@ -1,7 +1,12 @@
 .idea
-.vagrant
-*.swp
-pkg/
-.rvmrc
+.kitchen
+.librarian
+.tmp/
 .redcar
+.rvmrc
+.vagrant
+*.lock
+*.swp
 Gemfile.lock
+pkg/
+modules/
