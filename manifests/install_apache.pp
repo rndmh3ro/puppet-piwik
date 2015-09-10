@@ -1,5 +1,6 @@
 class piwik::install_apache () {
 
+  class { 'php': }
   php::module { 'gd': }
   php::module { 'mbstring': }
   php::module { 'mysql': }
@@ -8,5 +9,4 @@ class piwik::install_apache () {
   class { 'apache': }
 
   class { '::apache::mod::php':  }
-
 }
