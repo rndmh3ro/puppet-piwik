@@ -8,9 +8,9 @@
 # === Examples
 #
 #  class { 'piwik':
-#    path    => "/srv/piwik",
-#    user    => "www-data",
-#    version => "2.9.0"
+#    path    => '/srv/piwik',
+#    user    => 'www-data',
+#    version => '2.9.0'
 #  }
 #
 # === Authors
@@ -32,7 +32,7 @@ class piwik (
 
   class { "::piwik::install_${web_server}": }
 
-  class { "::piwik::install_piwik":
+  class { '::piwik::install_piwik':
     path    => $path,
     user    => $user,
     version => $version,
