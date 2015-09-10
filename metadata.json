@@ -3,13 +3,68 @@
   "version": "2.0.0",
   "author": "Arthur Leonard Andersen,Zijad Purkovic,Keith Lyall",
   "summary": "Puppet Piwik Module",
-  "license": "GPLv3",
+  "license": "GPL-3.0",
   "source": "https://github.com/klyall/puppet-piwik",
   "project_page": "https://github.com/klyall/puppet-piwik/",
   "issues_url": "https://github.com/klyall/puppet-piwik/issues",
   "description": "Module to install Piwik using puppet.",
+  "tags": ["piwik"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "OracleLinux",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "SLES",
+      "operatingsystemrelease": [
+        "11 SP1"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
   "dependencies": [
-    { "name": "puppetlabs/apache", "version_requirement": ">=1.6.0" },
-    { "name": "example42/php", "version_requirement": ">=2.0.21" }
+    { "name": "puppetlabs/apache", "version_requirement": ">=1.6.0 < 2.0.0" },
+    { "name": "example42/php", "version_requirement": ">=2.0.21 < 3.0.0" }
   ]
 }
