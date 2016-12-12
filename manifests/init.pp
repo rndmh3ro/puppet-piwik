@@ -24,18 +24,23 @@
 # Class:: piwik
 #
 class piwik (
-  $web_server = $::piwik::params::web_server,
-  $path       = $::piwik::params::path,
-  $user       = $::piwik::params::user,
-  $version    = $::piwik::params::version,
+  $web_server        = $::piwik::params::web_server,
+  $path              = $::piwik::params::path,
+  $user              = $::piwik::params::user,
+  $version           = $::piwik::params::version,
+  $download_baseurl  = $::piwik::params::download_baseurl,
 ) inherits ::piwik::params {
 
-  class { "::piwik::install_${web_server}": }
+  if $web_server {
+    class { "::piwik::install_${web_server}":
+      before => Class['::piwik::install_piwik'],
+    }
+  }
 
   class { '::piwik::install_piwik':
-    path    => $path,
-    user    => $user,
-    version => $version,
-    require => Class[ "::piwik::install_${web_server}" ],
+    path             => $path,
+    user             => $user,
+    version          => $version,
+    download_baseurl => $download_baseurl,
   }
 }
