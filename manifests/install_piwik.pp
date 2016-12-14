@@ -1,21 +1,6 @@
-class piwik::install_piwik ($path, $user, $version) {
+class piwik::install_piwik ($path, $user, $version, $download_baseurl) {
 
-  if !defined(Package['unzip']) {
-    package { 'unzip': }
-  }
-
-  if !defined(Package['wget']) {
-    package { 'wget':
-      ensure => installed,
-    }
-  }
-
-  if !defined(Package['rsync']) {
-    package { 'rsync':
-      ensure => installed,
-    }
-  }
-
+  ensure_packages( ['rsync', 'wget', 'unzip'], {'ensure' => 'present'} )
 
   if $version == 'latest' {
     $real_version = 'latest.zip'
@@ -31,7 +16,7 @@ class piwik::install_piwik ($path, $user, $version) {
   exec { 'piwik-download':
     path    => '/bin:/usr/bin',
     creates => "${path}/index.php",
-    command => "bash -c 'cd /tmp; wget http://builds.piwik.org/${real_version}'",
+    command => "bash -c 'cd /tmp; wget ${download_baseurl}/${real_version}'",
     require => [ Package['wget'], File[$path] ],
     user    => $user,
   }
