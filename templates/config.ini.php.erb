@@ -16,7 +16,7 @@ datatable_archiving_maximum_rows_referrers = 10000
 datatable_archiving_maximum_rows_subtable_referrers = 10000
 proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"
 
-<% @piwik_general_trusted_hosts.each do |val| -%>
+<% piwik_general_trusted_hosts.each do |val| -%>
 trusted_hosts[] = "<%= val %>"
 <% end -%>
 
