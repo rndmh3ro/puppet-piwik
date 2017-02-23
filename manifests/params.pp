@@ -12,10 +12,6 @@ class piwik::params {
   $piwpiwik_tracker_cookie_expire = undef
   $piwpiwik_mail_host             = undef
   $piwik_trusted_hosts            = []
-  $piwik_cronrun_hour             = undef
-  $piwik_cronrun_minute           = undef
-  $piwik_cronjob_command          = undef
-  $piwik_cronjob_user             = undef
 
   if $web_server {
     if $web_server == 'apache' {
