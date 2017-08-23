@@ -9,6 +9,9 @@ tables_prefix = "piwik_"
 port = <%= @piwik_db_port %>
 adapter = "MYSQLI"
 
+[log]
+log_writers[] = "database"
+
 [General]
 login_password_recovery_email_address = "<%= @piwik_rec_mail_addr %>"
 noreply_email_address = "<%= @piwik_noreply_mail_addr %>"
