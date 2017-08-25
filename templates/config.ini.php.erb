@@ -11,6 +11,7 @@ adapter = "MYSQLI"
 
 [log]
 log_writers[] = "database"
+log_level = DEBUG
 
 [General]
 login_password_recovery_email_address = "<%= @piwik_rec_mail_addr %>"
@@ -19,6 +20,7 @@ datatable_archiving_maximum_rows_referrers = 10000
 datatable_archiving_maximum_rows_subtable_referrers = 10000
 proxy_client_headers[] = "HTTP_X_FORWARDED_FOR"
 API_datatable_default_limit = -1
+session_save_handler = dbtable
 
 <% @piwik_trusted_hosts.each do |val| -%>
 trusted_hosts[] = "<%= val %>"
