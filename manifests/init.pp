@@ -24,7 +24,6 @@
 # Class:: piwik
 #
 class piwik (
-  $web_server                  = $::piwik::params::web_server,
   $path                        = $::piwik::params::path,
   $user                        = $::piwik::params::user,
   $version                     = $::piwik::params::version,
@@ -41,12 +40,6 @@ class piwik (
   $piwik_trusted_hosts         = $::piwik::params::piwik_trusted_hosts,
 
 ) inherits ::piwik::params {
-
-  if $web_server {
-    class { "::piwik::install_${web_server}":
-      before => Class['::piwik::install_piwik'],
-    }
-  }
 
   class { '::piwik::install_piwik':
     path             => $path,

@@ -14,7 +14,6 @@ The simplest installation can be achieved with the following:
 The installation can be tailored by specifying any of the parameters in the class definition. Here is an example with the default values:
 
     class { 'piwik':
-      web_server => 'apache',
       version    => 'latest',
       path       => "/var/www/html",
       user        => "apache",

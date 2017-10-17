@@ -1,5 +1,4 @@
 class piwik::params {
-  $web_server                     = 'apache'
   $version                        = 'latest'
   $download_baseurl               = 'http://builds.piwik.org/'
   $piwik_db_host                  = undef
