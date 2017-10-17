@@ -62,6 +62,7 @@ class piwik (
     piwik_mail_host             => $piwik_mail_host,
     piwik_trusted_hosts         => $piwik_trusted_hosts,
     piwik_plugins               => $piwik_plugins,
+    user                        => $user,
   }
 
   if $piwik_plugins {
