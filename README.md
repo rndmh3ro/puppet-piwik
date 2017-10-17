@@ -39,7 +39,3 @@ You can install plugins like this:
 ## Contribute
 
 Want to help - send a pull request.
-
-Suggestions
-
-* Nginx instead of Apache (create install_nginx.pp etc.)
