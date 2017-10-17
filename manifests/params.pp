@@ -1,5 +1,6 @@
 class piwik::params {
   $version                        = 'latest'
+  $user                           = undef
   $download_baseurl               = 'http://builds.piwik.org/'
   $piwik_db_host                  = undef
   $piwpiwik_db_username           = undef
@@ -11,15 +12,5 @@ class piwik::params {
   $piwpiwik_tracker_cookie_expire = undef
   $piwpiwik_mail_host             = undef
   $piwik_trusted_hosts            = []
-
-  if $web_server {
-    if $web_server == 'apache' {
-      $path    = '/var/www/html'
-      $user    = 'apache'
-    } else {
-      $path    = '/srv/piwik'
-      $user    = 'root'
-    }
-  }
   $piwik_plugins                  = {}
 }
