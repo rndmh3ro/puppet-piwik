@@ -21,4 +21,5 @@ class piwik::params {
       $user    = 'root'
     }
   }
+  $piwik_plugins                  = {}
 }

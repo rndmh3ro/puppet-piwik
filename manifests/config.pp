@@ -10,6 +10,7 @@ class piwik::config (
   $piwik_tracker_cookie_expire,
   $piwik_mail_host,
   $piwik_trusted_hosts,
+  $piwik_plugins,
 ) {
 
   file { "$path/config/config.ini.php":
