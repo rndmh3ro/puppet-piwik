@@ -39,7 +39,6 @@ class piwik (
   $piwik_mail_host             = $::piwik::params::piwik_mail_host,
   $piwik_trusted_hosts         = $::piwik::params::piwik_trusted_hosts,
   $piwik_plugins               = $::piwik::params::piwik_plugins,
-
 ) inherits ::piwik::params {
 
   class { '::piwik::install_piwik':
