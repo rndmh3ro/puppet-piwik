@@ -24,7 +24,6 @@
 # Class:: piwik
 #
 class piwik (
-  $web_server                  = $::piwik::params::web_server,
   $path                        = $::piwik::params::path,
   $user                        = $::piwik::params::user,
   $version                     = $::piwik::params::version,
@@ -39,14 +38,8 @@ class piwik (
   $piwik_tracker_cookie_expire = $::piwik::params::piwik_tracker_cookie_expire,
   $piwik_mail_host             = $::piwik::params::piwik_mail_host,
   $piwik_trusted_hosts         = $::piwik::params::piwik_trusted_hosts,
-
+  $piwik_plugins               = $::piwik::params::piwik_plugins,
 ) inherits ::piwik::params {
-
-  if $web_server {
-    class { "::piwik::install_${web_server}":
-      before => Class['::piwik::install_piwik'],
-    }
-  }
 
   class { '::piwik::install_piwik':
     path             => $path,
@@ -67,6 +60,12 @@ class piwik (
     piwik_tracker_cookie_expire => $piwik_tracker_cookie_expire,
     piwik_mail_host             => $piwik_mail_host,
     piwik_trusted_hosts         => $piwik_trusted_hosts,
-
+    piwik_plugins               => $piwik_plugins,
+    user                        => $user,
   }
+
+  if $piwik_plugins {
+    create_resources(piwik::plugin, $piwik_plugins)
+  }
+
 }

@@ -10,11 +10,15 @@ class piwik::config (
   $piwik_tracker_cookie_expire,
   $piwik_mail_host,
   $piwik_trusted_hosts,
+  $piwik_plugins,
+  $user,
 ) {
 
   file { "$path/config/config.ini.php":
     ensure  => present,
     require => Class['::piwik::install_piwik'],
     content => template('piwik/config.ini.php.erb'),
+    owner   => $user,
+    group   => $user,
   }
 }
