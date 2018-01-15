@@ -1,8 +1,8 @@
 ---
 language: ruby
 script:
-  - bundle exec rspec lint
-  - bundle exec rspec spec
+  - bundle exec lint
+  - bundle exec spec
 matrix:
   include:
   - rvm: 1.9.3
