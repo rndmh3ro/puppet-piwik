@@ -35,6 +35,12 @@ You can install plugins like this:
       Barometer:
         plugin_version: "0.6.0"
 
+If you do not want to download a plugin but merely configure it, set `download` to false:
+
+    piwik::plugins:
+      LoginFailLog:
+        plugin_version: "latest"
+        download: false
 
 ## Contribute
 
