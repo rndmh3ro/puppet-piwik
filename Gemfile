@@ -1,18 +1,45 @@
-source ENV['GEM_SOURCE'] || 'https://rubygems.org'
+source "https://rubygems.org"
 
-puppetversion = ENV.key?('PUPPET_VERSION') ? ENV['PUPPET_VERSION'] : ['>= 3.3']
-gem 'metadata-json-lint'
-gem 'puppet', puppetversion
-gem 'puppetlabs_spec_helper', '>= 1.2.0'
-gem 'puppet-lint', '>= 1.0.0'
-gem 'facter', '>= 1.7.0'
-gem 'rspec-puppet'
+group :test do
+  gem "rake"
+  gem "puppet", ENV['PUPPET_GEM_VERSION'] || '~> 5.0'
 
-# rspec must be v2 for ruby 1.8.7
-if RUBY_VERSION >= '1.8.7' && RUBY_VERSION < '1.9'
-  gem 'rspec', '~> 2.0'
-  gem 'rake', '~> 10.0'
-else
-  # rubocop requires ruby >= 1.9
-  gem 'rubocop'
+  gem "rspec"
+  gem "rspec-puppet"
+  gem "puppetlabs_spec_helper"
+  gem "metadata-json-lint"
+  gem "rspec-puppet-facts"
+  gem 'simplecov'
+  gem 'coveralls'
+  gem "parallel_tests"
+
+  # Common puppet-lint plugins
+  gem "puppet-lint-absolute_classname-check"
+  gem "puppet-lint-leading_zero-check"
+  gem "puppet-lint-trailing_comma-check"
+  gem "puppet-lint-version_comparison-check"
+  gem "puppet-lint-classes_and_types_beginning_with_digits-check"
+  gem "puppet-lint-unquoted_string-check"
+
+  gem "json_pure", '< 2.0.1'
+
+  gem "puppet-blacksmith"
+
+  # Changelog generation gems
+  gem 'github_changelog_generator', '~> 1.13.0' if RUBY_VERSION < '2.2.2'
+  gem 'github_changelog_generator'              if RUBY_VERSION >= '2.2.2'
+  gem 'rack', '~> 1.0'                          if RUBY_VERSION < '2.2.2'
 end
+
+group :development do
+  # Experimental testing with puppet-strings
+  gem "puppet-strings"
+  gem "rgen"
+end
+
+group :system_tests do
+  gem "beaker"
+  gem "beaker-rspec"
+  gem "beaker-puppet_install_helper"
+end
+
