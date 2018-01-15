@@ -2,7 +2,7 @@
 
 A puppet module to easily deploy Piwik.
 
-This is an opinionated module that will by default install Apache, PHP and Piwik in the root of the web server.
+This is an module that will install Piwik in the root of the web server.
 
 ## Usage
 
