@@ -1,7 +1,6 @@
 ---
 language: ruby
 script:
-  - bundle exec rake lint
   - bundle exec rake spec
 matrix:
   include:
